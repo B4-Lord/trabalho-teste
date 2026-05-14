@@ -27,7 +27,9 @@
 
 
 
-
+  .texto {
+    max-width: 70%;
+  }
 
 
 
@@ -85,7 +87,7 @@
       background-size: 220% 220%;
       animation: gradientMove 6s ease-in-out infinite;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-      flex: 0 0 auto;
+      min-width: 280px;
     }
 
     .imagem1 img {
@@ -110,25 +112,26 @@
     }
 
     .teste1 {
-      padding-left: 10%;
-      margin-right: 10%;
-      width: 50%;
+      padding-left: 5%;
+      margin-right: 5%;
       display: flex;
       align-items: flex-start;
       justify-content: center;
       flex-direction: column;
+      flex: 1 1 48%;
+      min-width: 280px;
     }
 
     .estilobox1 {
 
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
       width: 100%;
       height: auto;
       flex-direction: row;
-      flex-wrap: wrap;
-      gap: 16px;
+      flex-wrap: nowrap;
+      padding-right: 5%;
     }
 
 
@@ -177,9 +180,9 @@
     /* Garantir que imagens e iframes não ultrapassem suas caixas */
     img,
     .imagem1 img {
-      max-width: 100%;
+      max-width: 420px;
       height: auto;
-      max-height: 100%;
+      max-height: 420px;
       display: block;
       object-fit: contain;
     }
@@ -313,10 +316,29 @@
       z-index: 100000;
     }
 
-    /* Tablets e layout intermediário */
+    /* Tablets e acima - manter responsivo */
     @media(max-width:768px) {
       body {
         flex-direction: column;
+      }
+
+      .estilobox1 {
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+      }
+
+      .teste1 {
+        width: 100%;
+        padding-left: 0;
+        margin-right: 0;
+        min-width: auto;
+      }
+
+      .imagem1 {
+
+        max-width: 100%;
+        min-width: auto;
       }
 
       .container,
@@ -337,22 +359,6 @@
         height: auto;
         min-height: auto;
       }
-
-      .estilobox1 {
-        flex-direction: column;
-      }
-
-      .teste1 {
-        width: 100%;
-        padding-left: 12px;
-        margin-right: 0;
-      }
-
-      .imagem1 {
-        width: 100%;
-        max-width: 100%;
-        padding: 8px;
-      }
     }
 
     /* Mobile pequeño */
@@ -368,30 +374,20 @@
       }
 
       .estilobox1 {
-        padding-left: 0;
+        padding: 12px;
         gap: 8px;
       }
 
       .teste1 {
-        padding-left: 12px;
-        padding-right: 12px;
+        padding-left: 8px;
       }
 
       .imagem1 {
-        width: calc(100% - 24px);
-        margin: 0 12px;
+        padding: 6px;
       }
 
       .video-container {
         padding: 0 12px;
-        box-sizing: border-box;
         max-width: calc(100% - 24px);
-      }
-
-      .video-box iframe,
-      .video-container iframe,
-      iframe {
-        width: 100% !important;
-        height: auto !important;
       }
     }
