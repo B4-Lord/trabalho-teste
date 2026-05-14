@@ -1,66 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SLA</title>
+    <title>ECA Digital • Protegendo o Futuro</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <header class="site-head">
-        <h1>trabalho eca digital</h1>
+        <div class="header-content">
+            <h1>ECA Digital</h1>
+            <p class="subtitle">Proteção e direitos na era digital</p>
+        </div>
     </header>
-    <div class="container">
-        <div class="box1">
-            <div class="estilobox1">
 
-                <div class="teste1">
-                    <h1>TEXTO BASE</h1>
-                    <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quam nulla numquam voluptatum
-                        vitae voluptate eveniet repudiandae ducimus, sint nemo dolore tempore itaque, veniam nesciunt
-                        placeat voluptates quibusdam aperiam sunt.</p>
+    <main class="container">
+        <!-- Seção Principal -->
+        <section class="hero-box">
+            <div class="hero-content">
+                <div class="text-content">
+                    <h2>TEXTO BASE</h2>
+                    <p class="texto">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quam nulla numquam voluptatum 
+                        vitae voluptate eveniet repudiandae ducimus, sint nemo dolore tempore itaque, veniam nesciunt 
+                        placeat voluptates quibusdam aperiam sunt.
+                    </p>
+                    <a href="#" class="btn-primary">Saiba Mais</a>
                 </div>
 
-                <div class="imagem1">
-                    <img src="69af8853c4fb0b6ce0a6ba267fb18fec.jpg" alt="Imagem">
-                </div>
-
-            </div>
-        </div>
-
-        <div class="video-box1">
-
-            <h2 style="text-align: center;">Vídeo Explicativo</h2>
-
-            <div class="video-box2">
-                <p style="text-align: center;">
-                    Assista ao vídeo abaixo para entender melhor
-                    como funciona o ECA Digital e sua importância.
-                </p>
-
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/V6KEX0tkzvU"
-                        title="YouTube video player" frameborder="0" allowfullscreen>
-                    </iframe>
+                <div class="image-container">
+                    <img src="f513c24dd750ddc6bf73c03a89bf1e82.jpg" alt="ECA Digital">
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Alternar tema">
+        <!-- Seção do Vídeo -->
+        <section class="video-section">
+            <h2>Vídeo Explicativo</h2>
+            <p class="video-desc">
+                Assista ao vídeo abaixo para entender melhor como funciona o ECA Digital e sua importância.
+            </p>
+            
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/watch?v=MmhWhGo_7kc" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
         <img src="Moon-Dark.png" alt="Lua" class="toggle-icon moon">
         <img src="Sun-Light.png" alt="Sol" class="toggle-icon sun">
     </button>
 
     <footer>
-        <p style="text-align: center;">&copy; 2024 ECA Digital. Todos os direitos reservados.</p>
+        <p>&copy; 2024 ECA Digital • Todos os direitos reservados</p>
     </footer>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>

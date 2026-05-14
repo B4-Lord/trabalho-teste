@@ -1,393 +1,233 @@
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0f0f12;
+    --text: #e0e0e0;
+    --accent: #ff3366;
+    --card: rgba(30, 30, 40, 0.95);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background 0.4s ease;
+}
+
+body.light {
+    --bg: #f8f9fa;
+    --text: #1a1a1a;
+    --card: rgba(255, 255, 255, 0.95);
+}
+
+/* Header */
+.site-head {
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.header-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #ff3366, #ff6699);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Seção Hero */
+.hero-box {
+    margin: 3rem auto;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--card);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 51, 102, 0.2);
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.text-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+.texto {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 51, 102, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(255, 51, 102, 0.4);
+}
+
+/* Imagem */
+.image-container {
+    flex: 1;
+    min-width: 320px;
+    max-width: 480px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.03);
+}
+
+/* Vídeo */
+.video-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.video-section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.video-desc {
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+/* ==================== BOTÃO DE TEMA ==================== */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 3px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 51, 102, 0.25);
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 35px rgba(255, 51, 102, 0.35);
+}
+
+.theme-toggle img.toggle-icon {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    transition: all 0.4s ease;
+}
+
+/* Lua e Sol */
+.toggle-icon.moon { opacity: 1; }
+.toggle-icon.sun { opacity: 0; }
+
+body.light .toggle-icon.moon {
+    opacity: 0;
+    transform: rotate(30deg) scale(0.7);
+}
+
+body.light .toggle-icon.sun {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+body:not(.light) .toggle-icon.moon {
+    filter: invert(1) brightness(1.8);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 51, 102, 0.2);
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 2rem;
+        gap: 2rem;
     }
-
-    :root {
-      --bg-color: rgb(22, 22, 22);
-      --text-color: rgb(255, 255, 255);
-      --toggle-bg: rgb(22, 22, 22);
-      --toggle-text: rgb(255, 255, 255);
-      --page-bg: var(--bg-color);
-    }
-
-    body {
-      width: 100%;
-      min-height: 100vh;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      background: var(--bg-color);
-      color: var(--text-color);
-    }
-
-
-
-
-
-  .texto {
-    max-width: 70%;
-  }
-
-
-
-    .container {
-      width: 100%;
-      max-width: 100%;
-      height: 100%;
-    }
-
-
-
-
-
-    .box1 {
-      width: 100%;
-      height: 500px;
-      display: flex;
-     
-      flex-wrap: wrap;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    /* Cabeçalho principal */
-    .site-head {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 16px;
-      background: transparent;
-    }
-
     .site-head h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: var(--text-color);
-      text-align: center;
-      letter-spacing: 0.6px;
+        font-size: 2.8rem;
     }
-
-    /* tema claro via classe `light` no body */
-    body.light {
-      --bg-color: rgb(255, 255, 255);
-      --text-color: rgb(22, 22, 22);
-      --toggle-bg: rgb(255, 255, 255);
-      --toggle-text: rgb(22, 22, 22);
-    }
-
-
-    .imagem1 {
-      width: min(100%, 420px);
-      padding: 8px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #4a0000 0%, #8b0000 45%, #ff6b6b 100%);
-      background-size: 220% 220%;
-      animation: gradientMove 6s ease-in-out infinite;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-      min-width: 280px;
-    }
-
-    .imagem1 img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 14px;
-    }
-
-    @keyframes gradientMove {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    .teste1 {
-      padding-left: 5%;
-      margin-right: 5%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-direction: column;
-      flex: 1 1 48%;
-      min-width: 280px;
-    }
-
-    .estilobox1 {
-
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      height: auto;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      padding-right: 5%;
-    }
-
-
-
-
-
-
-
-
-
-
-
-    .video-box1 {
-      display: flex;
-      flex-direction: column;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      background: var(--bg-color);
-      color: var(--text-color);
-    }
-
-    .video-box2 {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      aliugn-content: center;
-      justify-content: center;
-    }
-
-    .video-container {
-      margin-top: 50px;
-      margin-bottom: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 560px;
-      margin-left: auto;
-      margin-right: auto;
-      flex-wrap: wrap;
-
-    }
-
-    /* Garantir que imagens e iframes não ultrapassem suas caixas */
-    img,
-    .imagem1 img {
-      max-width: 420px;
-      height: auto;
-      max-height: 420px;
-      display: block;
-      object-fit: contain;
-    }
-
-    /* Regras padrão para iframes (restauradas) */
-    .video-box iframe,
-    .video-container iframe,
-    iframe {
-      width: 560px;
-      max-width: 100%;
-      height: 315px;
-      display: block;
-      border: 0;
-    }
-
-    /* Evita que o conteúdo ultrapasse caixas com altura fixa */
-    .box1,
-    .box2,
-    .box3,
-    .video-box,
-    .video-container {
-      overflow: hidden;
-    }
-
-    .theme-toggle {
-      position: fixed !important;
-      left: 16px !important;
-      bottom: calc(16px + env(safe-area-inset-bottom)) !important;
-      z-index: 200000 !important;
-      border: 0;
-      border-radius: 999px;
-      width: 56px;
-      height: 56px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      background: var(--toggle-bg);
-      color: var(--toggle-text);
-      cursor: pointer;
-      transition: transform 0.16s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
-      overflow: hidden;
-    }
-
-    .theme-toggle:hover {
-      transform: translateY(-2px);
-    }
-
-    .theme-toggle {
-      position: relative;
-    }
-
-    .theme-toggle img.toggle-icon {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 22px;
-      height: 22px;
-      transform: translate(-50%, -50%) scale(1);
-      display: block;
-      transition: opacity 0.22s ease, transform 0.18s ease;
-      pointer-events: none;
-      opacity: 0;
-    }
-
-    /* garantir que a imagem ocupe o espaço do ícone e fique corretamente escalada */
-    .theme-toggle img.toggle-icon {
-      max-width: 100%;
-      max-height: 100%;
-      width: 22px;
-      height: 22px;
-    }
-
-    /* default: show moon (dark mode) */
-    .toggle-icon.moon {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    body.light .toggle-icon.moon {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.9);
-    }
-
-    /* show sun only in light mode */
-    .toggle-icon.sun {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.9);
-    }
-
-    body.light .toggle-icon.sun {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    body.light .theme-toggle {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-      border: 0;
-      background: var(--toggle-bg);
-    }
-
-    body:not(.light) .theme-toggle {
-      box-shadow: none;
-      border: 2px solid rgba(255, 255, 255, 0.12);
-      background: var(--toggle-bg);
-    }
-
-    /* deixar a lua branca (inverter) no tema escuro */
-    body:not(.light) .toggle-icon.moon {
-      /* garantir visibilidade e forçar branco */
-      opacity: 1 !important;
-      filter: invert(1) brightness(2) saturate(1.2) !important;
-    }
-
-    /* garantir que o sol seja visível e sem filtro no tema claro */
-    body.light .toggle-icon.sun {
-      opacity: 1 !important;
-      filter: none !important;
-    }
-
-    /* garantir que o ícone não visível fique oculto */
-    body.light .toggle-icon.moon {
-      opacity: 0 !important;
-    }
-    body:not(.light) .toggle-icon.sun {
-      opacity: 0 !important;
-    }
-
-    /* garantir que o botão fique acima de tudo quando fixo */
-    .theme-toggle {
-      z-index: 100000;
-    }
-
-    /* Tablets e acima - manter responsivo */
-    @media(max-width:768px) {
-      body {
-        flex-direction: column;
-      }
-
-      .estilobox1 {
-        flex-direction: column;
-        padding: 16px;
-        gap: 16px;
-      }
-
-      .teste1 {
-        width: 100%;
-        padding-left: 0;
-        margin-right: 0;
-        min-width: auto;
-      }
-
-      .imagem1 {
-
-        max-width: 100%;
-        min-width: auto;
-      }
-
-      .container,
-      .box1,
-      .box2,
-      .box3,
-      .video-box1,
-      .video-box2,
-      .video-container {
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .box1,
-      .box2,
-      .box3 {
-        width: 100%;
-        height: auto;
-        min-height: auto;
-      }
-    }
-
-    /* Mobile pequeño */
-    @media (max-width: 480px) {
-      .site-head { padding: 18px 12px; }
-      .site-head h1 { font-size: 1.25rem; }
-
-      .theme-toggle {
-        width: 48px !important;
-        height: 48px !important;
-        left: 12px !important;
-        bottom: calc(12px + env(safe-area-inset-bottom)) !important;
-      }
-
-      .estilobox1 {
-        padding: 12px;
-        gap: 8px;
-      }
-
-      .teste1 {
-        padding-left: 8px;
-      }
-
-      .imagem1 {
-        padding: 6px;
-      }
-
-      .video-container {
-        padding: 0 12px;
-        max-width: calc(100% - 24px);
-      }
-    }
+}
