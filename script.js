@@ -1,3 +1,6 @@
+/* ==================== FUNÇAO BOTÃO MUDAR TEMA ==================== */
+
+
 const btn = document.getElementById('themeToggle');
 const root = document.body;
 

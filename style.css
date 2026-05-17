@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+/* ==================== SET COLOR ==================== */
+
 :root {
   --red: #b53340;
   --blue: #162742;
@@ -12,6 +14,8 @@
   --accent: var(--red);
   --card: #1a1a1a;
 }
+
+/* ======================================== */
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -27,7 +31,6 @@ body.light {
   --card: #ffffff;
 }
 
-/* ==================== HEADER ==================== */
 .site-head {
   text-align: center;
   padding: 4rem 1rem 3rem;
@@ -43,11 +46,24 @@ body.light {
   overflow: hidden;
 }
 
+/* ==================== ANIMAÇÃO DA HEADER ==================== */
+
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
+
+/* ======================================== */
+
 
 .header-content {
   max-width: 1200px;
@@ -61,7 +77,6 @@ body.light {
   z-index: 2;
 }
 
-/* Logo agora dentro da div com Flex */
 .logo-container {
   flex-shrink: 0;
 }
@@ -76,7 +91,6 @@ body.light {
   transform: scale(1.05);
 }
 
-/* Título centralizado */
 .title-container {
   text-align: center;
   flex: 1;
@@ -99,7 +113,6 @@ body.light {
   opacity: 0.95;
 }
 
-/* Container Principal */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -159,7 +172,6 @@ body.light {
   box-shadow: 0 15px 35px rgba(181, 51, 64, 0.5);
 }
 
-/* Imagem */
 .image-container {
   flex: 1;
   min-width: 320px;
@@ -177,7 +189,6 @@ body.light {
   transform: scale(1.03);
 }
 
-/* Vídeo */
 .video-section {
   max-width: 800px;
   margin: 4rem auto;
@@ -215,7 +226,6 @@ body.light {
   border-radius: 20px;
 }
 
-/* Botão de Tema */
 .theme-toggle {
   position: fixed;
   bottom: 30px;
@@ -245,8 +255,13 @@ body.light {
   transition: all 0.4s ease;
 }
 
-.toggle-icon.moon { opacity: 1; }
-.toggle-icon.sun  { opacity: 0; }
+.toggle-icon.moon {
+  opacity: 1;
+}
+
+.toggle-icon.sun {
+  opacity: 0;
+}
 
 body.light .toggle-icon.moon {
   opacity: 0;
@@ -258,7 +273,6 @@ body.light .toggle-icon.sun {
   transform: rotate(0) scale(1);
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 3rem 1rem;
@@ -268,13 +282,13 @@ footer {
   font-size: 0.95rem;
 }
 
-/* ==================== RESPONSIVO ==================== */
+/* ==================== RESPONSIVIDADE PARA CELULAR ==================== */
 @media (max-width: 768px) {
   .header-content {
     justify-content: center;
     gap: 1rem;
   }
-  
+
   .logo-dh {
     height: 60px;
   }
